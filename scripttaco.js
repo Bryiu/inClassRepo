@@ -85,29 +85,29 @@ $("#newCondiment").on("click", function(){
       })
 })
 function tacoDisplay(){
-    $("#tacoBox").append($("<div id='shellDiv'>"));
-    $("#shellDiv").append($("<div id='shellName'>"));
-    $("#shellDiv").append($("<div id='shellRecipe'>"));
+    $("#tacoBox").append($("<div class='box' id='shellDiv'>"));
+    $("#shellDiv").append($("<div class='name' id='shellName'>"));
+    $("#shellDiv").append($("<div class='recipe' id='shellRecipe'>"));
     $("#shellDiv").append($("<button class='btn' id='newShell'>"));
     $("#newShell").text("New Shell");
-    $("#tacoBox").append($("<div id='baseDiv'>"));
-    $("#baseDiv").append($("<div id='baseName'>"));
-    $("#baseDiv").append($("<div id='baseRecipe'>"));
+    $("#tacoBox").append($("<div class='box' id='baseDiv'>"));
+    $("#baseDiv").append($("<div class='name' id='baseName'>"));
+    $("#baseDiv").append($("<div class='recipe' id='baseRecipe'>"));
     $("#baseDiv").append($("<button class='btn' id='newBase'>"));
     $("#newBase").text("New Base");
-    $("#tacoBox").append($("<div id='seasoningDiv'>"));
-    $("#seasoningDiv").append($("<div id='seasoningName'>"));
-    $("#seasoningDiv").append($("<div id='seasoningRecipe'>"));
+    $("#tacoBox").append($("<div class='box' id='seasoningDiv'>"));
+    $("#seasoningDiv").append($("<div class='name' id='seasoningName'>"));
+    $("#seasoningDiv").append($("<div class='recipe' id='seasoningRecipe'>"));
     $("#seasoningDiv").append($("<button class='btn' id='newSeasoning'>"));
     $("#newSeasoning").text("New Seasoning");
-    $("#tacoBox").append($("<div id='mixinDiv'>"));
-    $("#mixinDiv").append($("<div id='mixinName'>"));
-    $("#mixinDiv").append($("<div id='mixinRecipe'>"));
+    $("#tacoBox").append($("<div class='box' id='mixinDiv'>"));
+    $("#mixinDiv").append($("<div class='name' id='mixinName'>"));
+    $("#mixinDiv").append($("<div class='recipe' id='mixinRecipe'>"));
     $("#mixinDiv").append($("<button class='btn' id='newMixin'>"));
     $("#newMixin").text("New Mixin");
-    $("#tacoBox").append($("<div id='condimentDiv'>"));
-    $("#condimentDiv").append($("<div id='condimentName'>"));
-    $("#condimentDiv").append($("<div id='condimentRecipe'>"));
+    $("#tacoBox").append($("<div class='box' id='condimentDiv'>"));
+    $("#condimentDiv").append($("<div class='name' id='condimentName'>"));
+    $("#condimentDiv").append($("<div class='recipe' id='condimentRecipe'>"));
     $("#condimentDiv").append($("<button class='btn' id='newCondiment'>"));
     $("#newCondiment").text("New Condiment");
 }
