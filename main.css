@@ -1,0 +1,53 @@
+header {
+    background-color: #f7c063;
+    border-bottom: 5px solid #f7b13f;}
+
+h1 {
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
+
+#tacoHeader {
+    width: 100px;
+    margin-top: 75px;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+#tequilaHeader {
+    width: 100px;
+    margin-top: 75px;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+#tacoBox {
+    width:100px;
+    margin-top: 25px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+#tequilaBox {
+    width: 200px;
+    margin-top: 25px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+.footer {
+    border-top: 5px solid #f7b13f;
+    background-color: #f7c063;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+}
