@@ -1,0 +1,15 @@
+/* NAV BAR STYLE */
+
+.navbar {
+    border-bottom: 5px solid #f7b13f;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-weight: bolder;
+}
+
+.navbar-brand {
+    font-size: xx-large;
+}
+
+.form-inline {
+    font-size: medium;
+}
