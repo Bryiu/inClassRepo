@@ -16,8 +16,6 @@ $("#tacoBout").on("click", function(){
                 seasoning = response.seasoning;
                 mixin = response.mixin;
                 condiment = response.condiment;
-                console.log("hello");
-                console.log(shell);
             }
       })
     $("#shellName").text(shell.name);
