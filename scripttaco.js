@@ -4,6 +4,31 @@ var baseLayer = "";
 var seasoning = "";
 var mixin = "";
 var condiment = "";
+var favShells = localStorage.getItem("favShells");
+if(favShells = null){
+    favShells = []
+}
+var favBases = localStorage.getItem("favBases");
+if(favBases = null){
+    favBases = []
+}
+var favSeasonings = localStorage.getItem("favSeasonings");
+if(favSeasonings = null){
+    favSeasonings = []
+}
+var favMixins = localStorage.getItem("favMixins");
+if(favMixins = null){
+    favMixins = []
+}
+var favCondiments = localStorage.getItem("favCondiments");
+if(favCondiments = null){
+    favCondiments = []
+}
+var favTacos = localStorage.getItem("favTacos");
+if(favTacos = null){
+    favTacos = []
+}
+
 tacoDisplay();
 $("#tacoHeader").on("click", function(){
     $.ajax({
@@ -29,7 +54,6 @@ $("#tacoHeader").on("click", function(){
       })
 })
 $("#newShell").on("click", function(){
-    console.log("hello");
     $.ajax({
         url: queryURL,
         type: "GET",
@@ -83,6 +107,21 @@ $("#newCondiment").on("click", function(){
                 $("#condimentRecipe").text(condiment.recipe);
             }
       })
+})
+$("#favShell").on("click", function(){
+    localStorage.setItem("favShells", favShells)
+})
+$("#favBase").on("click", function(){
+    localStorage.setItem("favBases", favBases)
+})
+$("#favSeasoning").on("click", function(){
+    localStorage.setItem("favSeasonings", favSeasonings)
+})
+$("#favMixin").on("click", function(){
+    localStorage.setItem("favMixin", favMixin)
+})
+$("#favCondiment").on("click", function(){
+    localStorage.setItem("favCondiments", favCondiment)
 })
 function tacoDisplay(){
     $("#tacoBox").append($("<div class='box' id='shellDiv'>"));
