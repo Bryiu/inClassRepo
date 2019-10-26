@@ -59,18 +59,6 @@ h1 {
     overflow:auto;
 }
 
-.footer {
-    border-top: 5px solid #f7b13f;
-    background-color: #f7c063;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-}
-
 .tacoBtn {
     background-color: rgb(40, 167, 69);
     color: white;
@@ -97,6 +85,7 @@ h1 {
     width: 100%;
     color: black;
     font-weight: bolder;
+    font-size: 25px;
     text-align: center;
     line-height: 25px;
 }
