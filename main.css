@@ -44,19 +44,11 @@ h1 {
 }
 
 #tacoBox {
-    width: 100px;
+    width: 100%;
     margin-top: 15px;
     height: 500px;
     border: 5px solid #f7b13f;
     overflow: auto;
-}
-
-#tequilaBox {
-    width: 200px;
-    margin-top: 15px;
-    height: 500px;
-    border: 5px solid #f7b13f;
-    overflow:auto;
 }
 
 .tacoBtn {
@@ -72,6 +64,30 @@ h1 {
 
 #favShell {
     border-bottom: 50px black;
+}
+
+#tequilaBox {
+    width: 200px;
+    margin-top: 15px;
+    height: 500px;
+    border: 5px solid #f7b13f;
+    overflow: auto;
+}
+
+#textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#searchDrink {
+    background-color: rgb(40, 167, 69);
+    color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 100px;
+    box-shadow: 1px 1px 5px black;
 }
 
 /* FOOTER BAR STYLE */
