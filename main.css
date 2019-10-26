@@ -1,6 +1,6 @@
-/* body {
-
-} */
+body {
+    font-family: 'Noto Serif', serif;
+}
 
 /* NAV BAR STYLE */
 .navbar {
@@ -71,7 +71,7 @@ h1 {
     line-height: 50px;
 }
 
-.btn {
+.tacoBtn {
     background-color: rgb(40, 167, 69);
     color: white;
     margin-top: 10px;
@@ -96,6 +96,7 @@ h1 {
     bottom: 0;
     width: 100%;
     color: black;
+    font-weight: bolder;
     text-align: center;
     line-height: 25px;
 }
