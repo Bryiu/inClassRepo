@@ -4,28 +4,28 @@ var baseLayer = "";
 var seasoning = "";
 var mixin = "";
 var condiment = "";
-var favShells = localStorage.getItem("favShells");
-if(favShells = null){
+var favShells = JSON.parse(localStorage.getItem("favShells"));
+if(favShells == null){
     favShells = []
 }
-var favBases = localStorage.getItem("favBases");
-if(favBases = null){
+var favBases = JSON.parse(localStorage.getItem("favBases"));
+if(favBases == null){
     favBases = []
 }
-var favSeasonings = localStorage.getItem("favSeasonings");
-if(favSeasonings = null){
+var favSeasonings = JSON.parse(localStorage.getItem("favSeasonings"));
+if(favSeasonings == null){
     favSeasonings = []
 }
-var favMixins = localStorage.getItem("favMixins");
-if(favMixins = null){
+var favMixins = JSON.parse(localStorage.getItem("favMixins"));
+if(favMixins == null){
     favMixins = []
 }
-var favCondiments = localStorage.getItem("favCondiments");
-if(favCondiments = null){
+var favCondiments = JSON.parse(localStorage.getItem("favCondiments"));
+if(favCondiments == null){
     favCondiments = []
 }
-var favTacos = localStorage.getItem("favTacos");
-if(favTacos = null){
+var favTacos = JSON.parse(localStorage.getItem("favTacos"));
+if(favTacos == null){
     favTacos = []
 }
 
@@ -109,19 +109,34 @@ $("#newCondiment").on("click", function(){
       })
 })
 $("#favShell").on("click", function(){
-    localStorage.setItem("favShells", favShells)
+    if(favShells.includes($("#shellName").text()) == false){
+        favShells.push($("#shellName").text());
+        localStorage.setItem("favShells", JSON.stringify(favShells));
+    }
 })
 $("#favBase").on("click", function(){
-    localStorage.setItem("favBases", favBases)
+    if(favBases.includes($("#baseName").text()) == false){
+        favBases.push($("#baseName").text());
+        localStorage.setItem("favBases", JSON.stringify(favBases));
+    }
 })
 $("#favSeasoning").on("click", function(){
-    localStorage.setItem("favSeasonings", favSeasonings)
+    if(favSeasonings.includes($("#seasoningName").text()) == false){
+        favSeasonings.push($("#seasoningName").text());
+        localStorage.setItem("favSeasonings", JSON.stringify(favSeasonings));
+    }
 })
 $("#favMixin").on("click", function(){
-    localStorage.setItem("favMixin", favMixin)
+    if(favMixins.includes($("#mixinName").text()) == false){
+        favMixins.push($("#mixinName").text());
+        localStorage.setItem("favMixins", JSON.stringify(favMixins));
+    }
 })
 $("#favCondiment").on("click", function(){
-    localStorage.setItem("favCondiments", favCondiment)
+    if(favCondiments.includes($("#condimentName").text()) == false){
+        favCondiments.push($("#condimentName").text());
+        localStorage.setItem("favCondiments", JSON.stringify(favCondiments));
+    }
 })
 function tacoDisplay(){
     $("#tacoBox").append($("<div class='box' id='shellDiv'>"));
