@@ -175,3 +175,7 @@ function tacoDisplay(){
     $("#condimentDiv").append($("<button class='tacoBtn' id='favCondiment'>"));
     $("#favCondiment").text("Add to Favorites");
 }
+// To do:  Combine tacoHeader on click with all the new on clicks and make them a single dry function with a for loop that checks id and val and pulls from an array
+// To do:  Make tacoDisplay() a dry function with a for loop going through an array (or two?)
+// To do:  Make the favorite buttons into a single dry function
+// To do:  Discuss the favorites tab and make it work
