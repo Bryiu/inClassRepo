@@ -5,7 +5,7 @@ var baseLayer = "";
 var seasoning = "";
 var mixin = "";
 var condiment = "";
-var layers = ["shell", "base", "seasoning", "mixin", "condiment"];
+var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
 var favShells = [];
 var favBases = [];
@@ -16,103 +16,60 @@ var favorites = JSON.parse(localStorage.getItem("favorites"));
 if(favorites == undefined){
     favorites = [favShells, favBases, favSeasonings, favMixins, favCondiments];
 }
-$("#newTaco").on("click", function(){
-    tacoDisplay();
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                shell = response.shell;
-                baseLayer = response.base_layer;
-                seasoning = response.seasoning;
-                mixin = response.mixin;
-                condiment = response.condiment;
-                $("#shellName").text(shell.name);
-                $("#shellRecipe").text(shell.recipe);
-                $("#baseName").text(baseLayer.name);
-                $("#baseRecipe").text(baseLayer.recipe);
-                $("#seasoningName").text(seasoning.name);
-                $("#seasoningRecipe").text(seasoning.recipe);
-                $("#mixinName").text(mixin.name);
-                $("#mixinRecipe").text(mixin.recipe);
-                $("#condimentName").text(condiment.name);
-                $("#condimentRecipe").text(condiment.recipe);
-            }
-      })
-})
-$("#newShell").on("click", function(){
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                shell = response.shell;
-                $("#shellName").text(shell.name);
-                $("#shellRecipe").text(shell.recipe);
-            }
-      })
-})
-$("#newBase").on("click", function(){
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                baseLayer = response.base_layer;
-                $("#baseName").text(baseLayer.name);
-                $("#baseRecipe").text(baseLayer.recipe);
-            }
-      })
-})
-$("#newSeasoning").on("click", function(){
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                seasoning = response.seasoning;
-                $("#seasoningName").text(seasoning.name);
-                $("#seasoningRecipe").text(seasoning.recipe);
-            }
-      })
-})
-$("#newMixin").on("click", function(){
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                mixin = response.mixin;
-                $("#mixinName").text(mixin.name);
-                $("#mixinRecipe").text(mixin.recipe);
-            }
-      })
-})
-$("#newCondiment").on("click", function(){
-    $.ajax({
-        url: queryURL,
-        type: "GET",
-            success: function(response){
-                condiment = response.condiment;
-                $("#condimentName").text(condiment.name);
-                $("#condimentRecipe").text(condiment.recipe);
-            }
-      })
-})
-$(".favorites").on("click", function(){
-    var i = $(this).val();
-    if(favorites[i].includes($("#" + layers[i] + "Name").text()) == false){
-        favorites[i].push($("#" + layers[i] + "Name").text());
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-})
+var firstTaco = true;
+$("#newTaco").val(6);
+$("#newTaco").addClass("new");
+onClickEvents();
 function tacoDisplay(){
     for(var i = 0; i < layers.length; i++){
         $("#tacoBox").append($("<div class='box' id='" + layers[i] + "Div'>"));
         $("#" + layers[i] + "Div").append($("<div class='name' id='" + layers[i] + "Name'>"));
         $("#" + layers[i] + "Div").append($("<div class='recipe' id='" + layers[i] + "Recipe'>"));
-        $("#" + layers[i] + "Div").append($("<button class='tacoBtn' id='new" + layersUpper[i] + "'>"));
+        $("#" + layers[i] + "Div").append($("<button class='tacoBtn new' id='new" + layersUpper[i] + "' value=" + i + ">"));
         $("#new" + layersUpper[i]).text("New " + layersUpper[i]);
         $("#" + layers[i] + "Div").append($("<button class='tacoBtn favorites' id='fav" + layersUpper[i] + "' value=" + i + ">"));
         $("#fav" + layersUpper[i]).text("Add to Favorites");
     }
+    onClickEvents()
 }
-// To do:  Combine tacoHeader on click with all the new on clicks and make them a single dry function with a for loop that checks id and val and pulls from an array
+function onClickEvents(){
+    $(".favorites").on("click", function(){
+        var i = $(this).val();
+        if(favorites[i].includes($("#" + layers[i] + "Name").text()) == false){
+            favorites[i].push($("#" + layers[i] + "Name").text());
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+        }
+    })
+    $(".new").on("click", function(){
+        if(firstTaco==true){
+            tacoDisplay();
+            firstTaco=false;
+            $("#newTaco").css("display", "none");
+       }
+        if($(this).val()<6){
+            var layer = layers[$(this).val()];
+            $.ajax({
+                url: queryURL,
+                type: "GET",
+                    success: function(response){
+                        $("#" + layer + "Name").text(response[layer].name);
+                        $("#" + layer + "Recipe").text(response[layer].recipe);
+                    }
+            })
+        }
+        else{
+            $.ajax({
+                url: queryURL,
+                type: "GET",
+                    success: function(response){
+                        for(var i = 0; i < layers.length; i++){
+                            $("#" + layers[i] + "Name").text(response[layers[i]].name);
+                            $("#" + layers[i] + "Recipe").text(response[layers[i]].recipe);
+                        }
+                    }
+            })
+        }
+    })
+}
 // To do:  Discuss the favorites tab and make it work
 // To do:  Weird equals signs and HTML in the recipe
