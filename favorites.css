@@ -17,7 +17,6 @@ body {
 
 /* CONTENT STYLE */
 .fav-div {
-    background-color: white;
     margin-top: 30px;
     font-family: 'Liu Jian Mao Cao', cursive;
     font-size: 24px;
@@ -26,6 +25,15 @@ body {
     border: 5px solid #f7b13f;
 }
 
+.bnt-text {
+    color:rgb(40, 167, 69);
+}
+
+.bnt-text:hover {
+    text-decoration: none;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    color: white;
+}
 
 /* FOOTER BAR STYLE */
 .footer {
