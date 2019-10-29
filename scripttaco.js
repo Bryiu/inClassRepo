@@ -6,9 +6,18 @@ var favBases = [];
 var favSeasonings = [];
 var favMixins = [];
 var favCondiments = [];
+var favShellsRecipe = [];
+var favBasesRecipe = [];
+var favSeasoningsRecipe = [];
+var favMixinsRecipe = [];
+var favCondimentsRecipe = [];
 var favorites = JSON.parse(localStorage.getItem("favorites"));
 if(favorites == undefined){
     favorites = [favShells, favBases, favSeasonings, favMixins, favCondiments];
+}
+var favoriteRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
+if(favoriteRecipes == undefined){
+    favoriteRecipes = [favShellsRecipe, favBasesRecipe, favSeasoningsRecipe, favMixinsRecipe, favCondimentsRecipe];
 }
 var firstTaco = true;
 $("#newTaco").val(6);
@@ -33,6 +42,8 @@ function onClickEvents(){
         if(favorites[i].includes($("#" + layers[i] + "Name").text()) == false){
             favorites[i].push($("#" + layers[i] + "Name").text());
             localStorage.setItem("favorites", JSON.stringify(favorites));
+            favoriteRecipes[i].push($("#" + layers[i] + "Recipe").text());
+            localStorage.setItem("favoriteRecipes", JSON.stringify(favoriteRecipes));
         }
     })
     $(".new").on("click", function(){
