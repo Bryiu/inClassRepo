@@ -1,0 +1,44 @@
+/*BODY STYLE*/
+body {
+    background-image: url(images/background.png) ;
+}
+
+
+/* NAV BAR STYLE */
+.navbar {
+    border-bottom: 5px solid #f7b13f;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-weight: bolder;
+}
+
+.navbar-brand {
+    font-size: xx-large;
+}
+
+/* CONTENT STYLE */
+.fav-div {
+    background-color: white;
+    margin-top: 30px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+    border: 5px solid #f7b13f;
+}
+
+
+/* FOOTER BAR STYLE */
+.footer {
+    border-top: 5px solid #f7b13f;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    background-color: #f7c063;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    text-align: center;
+    line-height: 25px;
+}
