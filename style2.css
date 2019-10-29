@@ -1,3 +1,9 @@
+/*BODY STYLE*/
+body {
+    background-image: url(images/background.png) ;
+}
+
+
 /* NAV BAR STYLE */
 .navbar {
     border-bottom: 5px solid #f7b13f;
