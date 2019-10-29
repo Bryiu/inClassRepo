@@ -46,6 +46,7 @@ h1 {
 #tacoBox {
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
     height: 500px;
     border: 5px solid #f7b13f;
     overflow: auto;
@@ -69,6 +70,7 @@ h1 {
 #tequilaBox {
     width: 200px;
     margin-top: 15px;
+    margin-bottom: 15px;
     height: 500px;
     border: 5px solid #f7b13f;
     overflow: auto;
