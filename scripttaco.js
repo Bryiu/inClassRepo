@@ -1,10 +1,4 @@
 var queryURL = "http://taco-randomizer.herokuapp.com/random/";
-var taco = {};
-var shell = "";
-var baseLayer = "";
-var seasoning = "";
-var mixin = "";
-var condiment = "";
 var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
 var favShells = [];
