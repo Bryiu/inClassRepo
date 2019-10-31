@@ -40,7 +40,6 @@ function onClickEvents(){
         if(firstTaco==true){
             tacoDisplay();
             firstTaco=false;
-            $("#newTaco").css("display", "none");
        }
         if($(this).val()<6){
             var layer = layers[$(this).val()];
