@@ -19,25 +19,28 @@ function tacoDisplay(){
                 var recipe = $("<div class='recipe' id='" + layers[i] + "Num" + j + "'>")
                 $("#" + layers[i] + "Div").append(recipe);
                 $("#" + layers[i] + "Num" + j).text(favoriteRecipes[i][j]);
-                $("#" + layers[i] + "Num" + j).append($("<button class='remove' id='" + layers[i] + j + "'>"));
+                $("#" + layers[i] + "Num" + j).append($("<button class='remove btn' id='" + layers[i] + j + "'>"));
                 $("#" + layers[i] + j).text("Remove From Favorites");
             }
         }
     }
-    // onClickEvents()
+    onClickEvents();
 }
 function onClickEvents(){
     $(".remove").on("click", function(){
         var parent = $(this).parent();
         for (var i = 0; i < favoriteRecipes.length; i++){
             for (var j = 0; j < favoriteRecipes[i].length; j++){
-                if(favoriteRecipes[i][j] == parent.text()){
-                    //remove from favorites
+                console.log(parent.text());
+                console.log(favoriteRecipes[i][j]);
+                if(parent.text().includes(favoriteRecipes[i][j])){
+                    favorites[i].splice(j, 1);
                     localStorage.setItem("favorites", JSON.stringify(favorites));
-                    //remove from favoriteRecipes
+                    favoriteRecipes[i].splice(j, 1);
                     localStorage.setItem("favoriteRecipes", JSON.stringify(favoriteRecipes));
                 }
             }
         }
+        tacoDisplay();
     })
 }
