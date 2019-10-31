@@ -19,7 +19,7 @@ function tacoDisplay(){
                 var recipe = $("<div class='recipe' id='" + layers[i] + "Num" + j + "'>")
                 $("#" + layers[i] + "Div").append(recipe);
                 $("#" + layers[i] + "Num" + j).text(favoriteRecipes[i][j]);
-                $("#" + layers[i] + "Num" + j).append($("<button class='remove btn' id='" + layers[i] + j + "'>"));
+                $("#" + layers[i] + "Num" + j).append($("<button class='removeBtn' id='" + layers[i] + j + "'>"));
                 $("#" + layers[i] + j).text("Remove From Favorites");
             }
         }

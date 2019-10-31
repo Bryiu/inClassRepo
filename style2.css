@@ -2,8 +2,8 @@
 body {
     font-family: 'Noto Serif', serif;
     background-image: url(images/tacosqueeze.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: repeat;
 }
 
 body:after {
@@ -16,7 +16,7 @@ body:after {
     bottom: 0;
     right: 0;
     width:100%;
-    height:100%;
+    height:150%;
     z-index: -1;
 }
 
