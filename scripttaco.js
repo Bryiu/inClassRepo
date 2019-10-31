@@ -19,7 +19,7 @@ function tacoDisplay(){
     for(var i = 0; i < layers.length; i++){
         $("#tacoBox").append($("<div class='box' id='" + layers[i] + "Div'>"));
         $("#" + layers[i] + "Div").append($("<div class='recipe' id='" + layers[i] + "Recipe'>"));
-        $("#" + layers[i] + "Div").append($("<button class='tacoBtn new animated delay pulse' id='new" + layersUpper[i] + "' value=" + i + ">"));
+        $("#" + layers[i] + "Div").append($("<button class='tacoBtn new delay animated pulse' id='new" + layersUpper[i] + "' value=" + i + ">"));
         $("#new" + layersUpper[i]).text("New " + layersUpper[i]);
         $("#" + layers[i] + "Div").append($("<button class='tacoBtn favorites animated delay pulse' id='fav" + layersUpper[i] + "' value=" + i + ">"));
         $("#fav" + layersUpper[i]).text("Add to Favorites");
