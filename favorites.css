@@ -64,7 +64,7 @@ body:after {
 }
 
 /* BUTTON TO REMOVE FROM FAVORITES */
-.removeBtn {
+.remove {
     float: right;
     background-color: rgb(40, 167, 69);
     color: white;
