@@ -1,8 +1,8 @@
 body {
     font-family: 'Noto Serif', serif;
     background-image: url(images/tacosqueeze.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: repeat;
     /* position: relative; */
     /* opacity: .8; */
     
@@ -18,7 +18,7 @@ body:after {
     bottom: 0;
     right: 0;
     width:100%;
-    height:100%;
+    height:125%;
     z-index: -1;
 }
 
@@ -46,6 +46,7 @@ h1 {
     line-height: 60px;
 }
 
+/* HEADER FOR TACO COLUMN */
 #tacoHeader {
     width: 100px;
     margin-top: 10px;
@@ -56,6 +57,7 @@ h1 {
     text-shadow: 2px 2px 6px grey;
 }
 
+/* HEADER FOR TEQUILA COLUMN */
 #tequilaHeader {
     width: 100px;
     margin-top: 10px;
@@ -76,11 +78,13 @@ h1 {
     overflow: auto;
 }
 
+/* BUTTON TO RANDOMLY GENERATE NEW TACOS */
 #newTaco {
     margin-left: 80px;
     width: 50%;
 }
 
+/* ANIME HOVER EFFECT TO SHAKE TACO ICON */
 #newTaco:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
@@ -100,6 +104,7 @@ h1 {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+/* BUTTONS IN THE TACO BOX */
 .tacoBtn {
     background-color: rgb(40, 167, 69);
     color: white;
@@ -125,6 +130,7 @@ h1 {
     color: white;
 }
 
+/* BUTTONS IN THE TEQUILA BOX */
 #tequilaBox {
     width: 200px;
     margin-top: 15px;
@@ -165,3 +171,20 @@ h1 {
     text-align: center;
     line-height: 25px;
 }
+
+
+
+
+
+
+.animated {
+    -webkit-animation-duration: 20ms;
+    -moz-animation-duration: 20ms;
+    animation-duration: 20ms;
+    animation-iteration-count: infinite;  
+}
+
+  .delay {
+    animation-delay: 20s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;}
