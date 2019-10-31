@@ -1,13 +1,23 @@
 var queryURL = "http://taco-randomizer.herokuapp.com/random/";
 var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
+var favShells = [];
+var favBases = [];
+var favSeasonings = [];
+var favMixins = [];
+var favCondiments = [];
+var favShellsRecipe = [];
+var favBasesRecipe = [];
+var favSeasoningsRecipe = [];
+var favMixinsRecipe = [];
+var favCondimentsRecipe = [];
 var favorites = JSON.parse(localStorage.getItem("favorites"));
 if(favorites == undefined){
-    favorites = [[], [], [], [], []];
+    favorites = [favShells, favBases, favSeasonings, favMixins, favCondiments];
 }
 var favoriteRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
 if(favoriteRecipes == undefined){
-    favoriteRecipes = [[], [], [], [], []];
+    favoriteRecipes = [favShellsRecipe, favBasesRecipe, favSeasoningsRecipe, favMixinsRecipe, favCondimentsRecipe];
 }
 var firstTaco = true;
 $("#newTaco").val(6);
@@ -19,9 +29,9 @@ function tacoDisplay(){
     for(var i = 0; i < layers.length; i++){
         $("#tacoBox").append($("<div class='box' id='" + layers[i] + "Div'>"));
         $("#" + layers[i] + "Div").append($("<div class='recipe' id='" + layers[i] + "Recipe'>"));
-        $("#" + layers[i] + "Div").append($("<button class='tacoBtn new' id='new" + layersUpper[i] + "' value=" + i + ">"));
+        $("#" + layers[i] + "Div").append($("<button class='tacoBtn new animated delay pulse' id='new" + layersUpper[i] + "' value=" + i + ">"));
         $("#new" + layersUpper[i]).text("New " + layersUpper[i]);
-        $("#" + layers[i] + "Div").append($("<button class='tacoBtn favorites' id='fav" + layersUpper[i] + "' value=" + i + ">"));
+        $("#" + layers[i] + "Div").append($("<button class='tacoBtn favorites animated delay pulse' id='fav" + layersUpper[i] + "' value=" + i + ">"));
         $("#fav" + layersUpper[i]).text("Add to Favorites");
     }
     onClickEvents()
@@ -40,6 +50,7 @@ function onClickEvents(){
         if(firstTaco==true){
             tacoDisplay();
             firstTaco=false;
+            $("#newTaco").css("display", "none");
        }
         if($(this).val()<6){
             var layer = layers[$(this).val()];

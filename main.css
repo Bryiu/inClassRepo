@@ -165,3 +165,20 @@ h1 {
     text-align: center;
     line-height: 25px;
 }
+
+
+
+
+
+
+.animated {
+    -webkit-animation-duration: 20ms;
+    -moz-animation-duration: 20ms;
+    animation-duration: 20ms;
+    animation-iteration-count: infinite;  
+}
+
+  .delay {
+    animation-delay: 20s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;}
