@@ -1,8 +1,24 @@
 /*BODY STYLE*/
 body {
-    background-image: url(images/background.png) ;
+    font-family: 'Noto Serif', serif;
+    background-image: url(images/tacosqueeze.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
+body:after {
+    content: "";
+    position: absolute;
+    background: white;
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    height:100%;
+    z-index: -1;
+}
 
 /* NAV BAR STYLE */
 .navbar {
@@ -17,12 +33,12 @@ body {
 
 /* CONTENT STYLE */
 .image {
-    width: 80%;
-    height: 70%;
-    margin-top: 100px;
+    max-width: 225px;
+    max-height: 235px;
+    margin-top: 60px;
     content: center;
     position: relative;
-    left: 8%;
+    right:20%;
 }
 
 .button-main {
@@ -31,7 +47,7 @@ body {
     text-align: center;
     content: center;
     top: 50px;
-    left: 26%;
+    right: 1%;
 }
 
 .bnt-text {
@@ -42,6 +58,16 @@ body {
     text-decoration: none;
     font-family: 'Liu Jian Mao Cao', cursive;
     color: white;
+}
+
+.container {
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 400px;
+    background-color: rgba(255,255,255, 0.8);
+    border: 5px solid #f7b13f;
+    overflow: auto;
 }
 
 /* FOOTER BAR STYLE */
