@@ -1,23 +1,13 @@
 var queryURL = "http://taco-randomizer.herokuapp.com/random/";
 var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
-var favShells = [];
-var favBases = [];
-var favSeasonings = [];
-var favMixins = [];
-var favCondiments = [];
-var favShellsRecipe = [];
-var favBasesRecipe = [];
-var favSeasoningsRecipe = [];
-var favMixinsRecipe = [];
-var favCondimentsRecipe = [];
 var favorites = JSON.parse(localStorage.getItem("favorites"));
 if(favorites == undefined){
-    favorites = [favShells, favBases, favSeasonings, favMixins, favCondiments];
+    favorites = [[], [], [], [], []];
 }
 var favoriteRecipes = JSON.parse(localStorage.getItem("favoriteRecipes"));
 if(favoriteRecipes == undefined){
-    favoriteRecipes = [favShellsRecipe, favBasesRecipe, favSeasoningsRecipe, favMixinsRecipe, favCondimentsRecipe];
+    favoriteRecipes = [[], [], [], [], []];
 }
 var firstTaco = true;
 $("#newTaco").val(6);
