@@ -11,7 +11,7 @@ function searchDiv() {
     textarea.attr("cols", "54");
     textarea.attr("rows", "2");
     search.append(textarea);
-    var button1 = $("<button id='searchDrink'>");
+    var button1 = $("<button class='animated delay pulse' id='searchDrink'>");
     button1.html("Search");
     search.append(button1);
     $("#tequilaBox").html(search);
