@@ -26,6 +26,6 @@ Validate.js: https://validatejs.org/
 OBSESSED TACO CODERS INVOLVED:
 Ben Honken (Back End)
 Bryan Lund (Back End)
-Blake Pierce ()
+Blake Pierce (Library)
 Haylee Thomas-Kuhlmann (Front End)
 Ka Vang (Front End)
