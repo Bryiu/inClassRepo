@@ -2,6 +2,7 @@ var queryURL = "http://taco-randomizer.herokuapp.com/random/";
 var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
 var descriptionFragments = ["Wrapped in delicious ", ", you'll be enjoying ", " with ", " garnished with ", ", and topped off with "];
+var descriptionFiller = [];
 var favorites = JSON.parse(localStorage.getItem("favorites"));
 if(favorites == undefined){
     favorites = [[], [], [], [], []];
@@ -43,16 +44,24 @@ function onClickEvents(){
        }
         if($(this).val()<6){
             var layer = layers[$(this).val()];
+            var layerIndex =$(this).val()
             $.ajax({
                 url: queryURL,
                 type: "GET",
                     success: function(response){
-                        $("#" + layer + "Name").text(response[layer].name);
+                        descriptionFiller[layerIndex] = response[layer].name;
                         $("#" + layer + "Recipe").text(response[layer].recipe);
+                        $("#description").empty();
+                        for(var i = 0; i < layers.length; i++){
+                            $("#description").text($("#description").text() + descriptionFragments[i]);
+                            $("#description").text($("#description").text() + descriptionFiller[i]);
+                        }
+                        $("#description").text($("#description").text() + "!");
                     }
             })
         }
         else{
+            descriptionFiller = []
             $.ajax({
                 url: queryURL,
                 type: "GET",
@@ -60,6 +69,7 @@ function onClickEvents(){
                         for(var i = 0; i < layers.length; i++){
                             $("#description").text($("#description").text() + descriptionFragments[i]);
                             $("#description").text($("#description").text() + response[layers[i]].name);
+                            descriptionFiller.push(response[layers[i]].name);
                             $("#" + layers[i] + "Recipe").text(response[layers[i]].recipe);
                         }
                         $("#description").text($("#description").text() + "!");
