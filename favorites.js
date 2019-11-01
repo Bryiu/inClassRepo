@@ -31,8 +31,6 @@ function onClickEvents(){
         var parent = $(this).parent();
         for (var i = 0; i < favoriteRecipes.length; i++){
             for (var j = 0; j < favoriteRecipes[i].length; j++){
-                console.log(parent.text());
-                console.log(favoriteRecipes[i][j]);
                 if(parent.text().includes(favoriteRecipes[i][j])){
                     favorites[i].splice(j, 1);
                     localStorage.setItem("favorites", JSON.stringify(favorites));
