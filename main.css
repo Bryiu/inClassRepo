@@ -3,9 +3,6 @@ body {
     background-image: url(images/tacosqueeze.png);
     background-size: cover;
     background-repeat: repeat;
-    /* position: relative; */
-    /* opacity: .8; */
-    
 }
 
 body:after {
@@ -78,6 +75,26 @@ h1 {
     overflow: auto;
 }
 
+#description {
+   /* line-height: 1; */
+   /* float: left; */
+   text-align: center;
+   font-weight: normal;
+   margin-top: 25px;
+   margin-bottom: 25px;
+   /* border: 2px black dotted; */
+   border-bottom: dotted 2px rgb(40, 167, 69);
+}
+
+.name {
+    font-weight: bolder;
+    color: rgb(40, 167, 69);
+    /* text-align: left; */
+    /* float: right; */
+    /* font-size: 16px; */
+    /* line-height: 0px; */
+}
+
 /* BUTTON TO RANDOMLY GENERATE NEW TACOS */
 #newTaco {
     margin-left: 80px;
@@ -128,6 +145,22 @@ h1 {
     text-decoration: none;
     font-family: 'Liu Jian Mao Cao', cursive;
     color: white;
+}
+
+/* TACO CATEGORIES */
+.box {
+    /* font-weight: bolder; */
+    color: black;
+}
+
+/* RECIPE DIRECTIONS */
+.recipe {
+    /* color: blue; */
+}
+
+#namez {
+    font-weight: bolder;
+    color: magenta;
 }
 
 /* BUTTONS IN THE TEQUILA BOX */

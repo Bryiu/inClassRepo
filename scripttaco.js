@@ -15,7 +15,7 @@ $("#newTaco").addClass("new");
 onClickEvents();
 function tacoDisplay(){
     $("#tacoBox").append($("<div id='description'>"));
-    $("#description").html("You'll be enjoying <div class='name' id='" + layers[1] + "Name'></div> with <div class='name' id='" + layers[2] + "Name'></div>, garnished with <div class='name' id='" + layers[3] + "Name'></div> topped off with <div class='name' id='" + layers[4] + "Name'></div> and wrapped in delicious <div class='name' id='" + layers[0] + "Name'></div>")
+    $("#description").html("You'll be enjoying <div class='name' id='" + layers[1] + "Name'></div> with <div class='name' id='" + layers[2] + "Name'>,</div> garnished with <div class='name' id='" + layers[3] + "Name'></div> topped off with <div class='name' id='" + layers[4] + "Name'></div> and wrapped in delicious <div class='name' id='" + layers[0] + "Name'></div>")
     for(var i = 0; i < layers.length; i++){
         $("#tacoBox").append($("<div class='box' id='" + layers[i] + "Div'>"));
         $("#" + layers[i] + "Div").append($("<div class='recipe' id='" + layers[i] + "Recipe'>"));
