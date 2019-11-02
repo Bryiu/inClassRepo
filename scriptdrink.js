@@ -37,7 +37,7 @@ $(document).on("click", "#searchDrink", function () {
             drinkName = response.drinks[randomNumber1].strDrink;
             buttonArray.push(drinkName);
             console.log(buttonArray);
-            var button2 = $("<button class="animated delay pulse"id='searchDrink'>");
+            var button2 = $("<button class='animated delay pulse'id='searchDrink'>");
             button2.html(buttonArray[i]);
             drinkSearch.append(button2);
         }
