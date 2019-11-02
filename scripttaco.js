@@ -66,6 +66,7 @@ function onClickEvents(){
                 url: queryURL,
                 type: "GET",
                     success: function(response){
+                        $("#description").empty();
                         for(var i = 0; i < layers.length; i++){
                             $("#description").text($("#description").text() + descriptionFragments[i]);
                             $("#description").text($("#description").text() + response[layers[i]].name);
